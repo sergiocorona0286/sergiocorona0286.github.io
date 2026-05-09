@@ -379,8 +379,33 @@
     flex-shrink: 0;
   }
 
-  .project-link {
-    display: inline-flex;
+  .project-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(13,110,110,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+
+  .project-gallery-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-gallery-2 img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(13,110,110,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
     align-items: center;
     gap: 0.5rem;
     color: var(--teal);
@@ -609,9 +634,20 @@
       </div>
       <div class="project-body">
         <p class="project-desc">
-          Análisis exploratorio de datos (EDA) de 500 incidentes de seguridad industrial 
-          simulados. Incluye limpieza de datos, estadística descriptiva y 4 visualizaciones 
-          que revelan patrones de riesgo por área, turno y tipo de incidente.
+          <strong>Contexto:</strong> Análisis exploratorio de 500 registros de incidentes de 
+          seguridad industrial simulados, con 13 variables que incluyen área, tipo, turno, 
+          severidad, costo y días perdidos.
+        </p>
+        <p class="project-desc">
+          <strong>Análisis:</strong> Se aplicó limpieza de datos, estadística descriptiva con 
+          Pandas y 4 visualizaciones con Matplotlib y Seaborn para identificar patrones de 
+          riesgo por área, turno y tipo de incidente.
+        </p>
+        <p class="project-desc">
+          <strong>Conclusiones:</strong> Perforación concentra el mayor número de incidentes. 
+          El turno matutino registra más eventos aunque el nocturno presenta mayor costo 
+          promedio. El 50.6% de los incidentes son leves, pero los graves representan el 
+          mayor impacto económico.
         </p>
         <div class="project-tags">
           <span class="tag">Python</span>
@@ -627,6 +663,9 @@
           <li>4 gráficas de distribución y comparación</li>
           <li>Notebook documentado con conclusiones en Markdown</li>
         </ul>
+        <div class="project-gallery">
+          <img src="grafica_python.png" alt="Análisis EDA Incidentes HSE — Python">
+        </div>
         <a href="https://github.com/sergiocorona0286/proyecto-python-eda" target="_blank" class="project-link">
           Ver en GitHub →
         </a>
@@ -642,9 +681,22 @@
       </div>
       <div class="project-body">
         <p class="project-desc">
-          Análisis completo de 2,000 incidentes HSE en 8 áreas operativas durante 2022–2024. 
-          15 consultas SQL avanzadas con JOINs, Window Functions y CTEs, complementadas con 
-          visualizaciones en Python y un dashboard ejecutivo de KPIs.
+          <strong>Contexto:</strong> Base de datos de 2,000 incidentes HSE en 8 áreas 
+          operativas durante 2022–2024, con 4 tablas relacionadas: áreas, tipos de incidente, 
+          empleados e incidentes.
+        </p>
+        <p class="project-desc">
+          <strong>Análisis:</strong> 15 consultas SQL con JOINs, Window Functions (RANK, 
+          ROW_NUMBER, LAG), CTEs y CASE WHEN. Los resultados se exportaron a CSV y se 
+          visualizaron con Python, incluyendo análisis de reincidencia, EPP, turnos, 
+          medidas correctivas y correlación entre variables.
+        </p>
+        <p class="project-desc">
+          <strong>Conclusiones:</strong> Mantenimiento es el área más crítica en costo e 
+          incidentes graves. La reincidencia promedio es 27.6%, indicando fallas en el 
+          cierre de acciones correctivas. El turno nocturno tiene el mayor costo promedio 
+          por incidente. Cambio de procedimiento es la medida correctiva más efectiva con 
+          solo 21.43% de reincidencia.
         </p>
         <div class="project-tags">
           <span class="tag">MySQL</span>
@@ -660,6 +712,13 @@
           <li>Análisis de reincidencia, EPP, turnos y medidas correctivas</li>
           <li>Dashboard ejecutivo con 8 KPIs de seguridad industrial</li>
         </ul>
+        <div class="project-gallery">
+          <img src="grafica_sql_3.png" alt="Dashboard Ejecutivo HSE 2022-2024">
+        </div>
+        <div class="project-gallery-2">
+          <img src="grafica_sql_1.png" alt="Mapa de Calor de KPIs por Área">
+          <img src="grafica_sql_2.png" alt="Matriz de Correlación entre Variables HSE">
+        </div>
         <a href="https://github.com/sergiocorona0286/proyecto-sql-hse-analysis" target="_blank" class="project-link">
           Ver en GitHub →
         </a>
